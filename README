@@ -8,9 +8,9 @@ elasticsearch 操作框架
 2. elastic-sql  sql方式查询es，使用开源的框架集成修改增加新功能，实现了haschild，innerhit搜索
 例：
 select *
-from group_product_hotel_index_v1/productinfodocument/2
-where indexInfo.categoryId=1 and HAS_CHILD(hotel, hotelinfodocument ,index.cityId=2,true )
-order by sortInfo.sort9 asc
+from index_v1/info/2
+where id=1 and HAS_CHILD(hotel, info ,infoid=2,true )
+order by sortfield asc
 limit 0,10
 
 
