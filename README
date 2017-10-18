@@ -1,0 +1,18 @@
+elasticsearch 操作框架
+
+1. elasticsearch 操作, mapping,create,index,update,delete,bulk,search
+    -- es 注解mapping已经实现大部分属性，如有需要再添加
+    EsDocExecutor 高级api，有失败重试功能
+    EsExecutorRetry 失败重试器
+
+2. elastic-sql  sql方式查询es，使用开源的框架集成修改增加新功能，实现了haschild，innerhit搜索
+例：
+select *
+from group_product_hotel_index_v1/productinfodocument/2
+where indexInfo.categoryId=1 and HAS_CHILD(hotel, hotelinfodocument ,index.cityId=2,true )
+order by sortInfo.sort9 asc
+limit 0,10
+
+
+---Author：Eason Zhu
+email:afoiwf@vip.qq.com
